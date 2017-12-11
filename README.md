@@ -86,7 +86,8 @@ code after its installed to the (virtual) environment and have the changes
 take effect immediately. <br />
 Note that it is highly recommended to use:
  * `pip install .` (install) and 
- * `pip install -e <path>` (developer install) to install packages from path,
+ * `pip install -e <path>` (developer install) to install packages from path 
+ (or from [remote repo](https://packaging.python.org/tutorials/installing-packages/#installing-from-vcs)),
   as invoking`setup.py` directly will do the wrong things for many 
   dependencies like pulling prereleases and incompatible packages versions 
   and make the package hard to uninstall with pip. <br /> <br />
