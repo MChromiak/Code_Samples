@@ -74,6 +74,26 @@ Python 3.5.2
     * find pip packages and versions: `pip freeze`
         * only packages that are in VE (ie. not inherited from system): `pip 
         freeze --local`
+        
+5. To develop a code from eg. GitHub cloned repo use local package: 
+Python `setup.py install` is used to install (typically third party) packages 
+that you're not going to be developing/editing/debugging yourself. <br />
+For your own stuff, you want to get your package installed and then be able 
+to frequently edit your code and not have to re-install your package—this is 
+exactly what python `setup.py develop` does: installs the package (typically 
+just a source folder) in a way that allows you to conveniently edit your 
+code after its installed to the (virtual) environment and have the changes 
+take effect immediately. <br />
+Note that it is highly recommended to use:
+ * `pip install .` (install) and 
+ * `pip install -e <path>` (developer install) to install packages from path,
+  as invoking`setup.py` directly will do the wrong things for many 
+  dependencies like pulling prereleases and incompatible packages versions 
+  and make the package hard to uninstall with pip. <br /> <br />
+Difference: `pip install -e` uses wheel while `python setup.py develop`
+doesn't use it. <br /> <br />
+With install, you could achieve the same behavior by using `pip install -e 
+/path/to/package --no-use-wheel`
 
 Now, to use any of the subdirectories' tools, just increment their included 
 README instructions to test the attached python code or Jupyter notebook (`
