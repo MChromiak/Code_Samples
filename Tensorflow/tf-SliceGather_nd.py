@@ -40,13 +40,13 @@ input = [
 s1 = tf.slice(input, [1, 0, 0], [1, 1, 3])  # [[[21 22 23]]]
 
 s2 = tf.slice(input, [2, 0, 0], [3, 1, 2])  # [[[31 32]]
-#  [[41 42]]
-#  [[51 52]]]
+                                            #  [[41 42]]
+                                            #  [[51 52]]]
 
 s3 = tf.slice(input, [0, 0, 1], [4, 1, 1])  # [[[12]]
-#  [[22]]
-#  [[32]]
-#  [[42]]]
+                                            #  [[22]]
+                                            #  [[32]]
+                                            #  [[42]]]
 
 # Any zero in 'size' parameter always gives empty result tensor:
 tf.slice(input, [0, 0, 1], [1, 0, 1])  # []
@@ -56,12 +56,12 @@ tf.slice(input, [0, 0, 1], [1, 1, 1])  # [[[12]]]
 
 # negative value means the function cutting tensors automatically
 # '-1' here is equivalent to "*" or "take all in that dimension"
-tf.slice(input, [2, 0, 2], [-1, -1, -1])  # [[[33]
-#   [36]]
-#  [[43]
-#   [46]]
-#  [[53]
-#   [56]]]
+tf.slice(input, [2, 0, 2], [-1, -1, -1])    # [[[33]
+                                            #   [36]]
+                                            #  [[43]
+                                            #   [46]]
+                                            #  [[53]
+                                            #   [56]]]
 
 #   argmax
 # -----------------
@@ -94,13 +94,13 @@ tf.gather(x, 0)  # [1, 2, 3, 4, 3, 2, 1]
 # vector, and then concatenates them.
 # Gathering [1,0] produces row 1 and row 0. Concatenating them flips the rows
 # in the original matrix.
-tf.gather(x, [1, 0])  # [[2,3,4,3,2,1,0],
-#  [1,2,3,4,3,2,1]]
+tf.gather(x, [1, 0])    # [[2,3,4,3,2,1,0],
+                        #  [1,2,3,4,3,2,1]]
 
 # In general, each scalar index within the index tensor will produce an
 # entire row in x.
-tf.gather(x, [[[1]], [[0]]])  # [ [[2,3,4,3,2,1,0]],
-#   [[1,2,3,4,3,2,1]] ]
+tf.gather(x, [[[1]], [[0]]])    # [ [[2,3,4,3,2,1,0]],
+                                #   [[1,2,3,4,3,2,1]] ]
 
 # `indices` defines slices into the first dimension of `params`
 # index describe which slice gather from input array, not which element
@@ -110,10 +110,10 @@ params_g = [[1, 2, 3],
 
 idx = [[1, 0], [2, 0]]
 
-tf.gather(params_g, idx)  # [ [[4 5 6],
-#   [1 2 3]],
-# [ [7 8 9],
-#   [1 2 3]] ], shape=(2, 2, 3), dtype=int32
+tf.gather(params_g, idx)    # [ [[4 5 6],
+                            #   [1 2 3]],
+                            # [ [7 8 9],
+                            #   [1 2 3]] ], shape=(2, 2, 3), dtype=int32
 
 # Gather_nd (n-dimentional; multidimention)
 # -----------------
@@ -126,7 +126,7 @@ x = [[1, 2, 3, 4, 3, 2, 1],
 # An empty index returns the entire tensor.
 i = tf.cast([], tf.int32)
 tf.gather_nd(x, i)  # [[ 1,2,3,4,3,2,1],
-#  [ 2,3,4,3,2,1,0]]
+                    #  [ 2,3,4,3,2,1,0]]
 
 # The row 0 of x is [1,2,3,4,3,2,1], so gathering [0] returns it.
 tf.gather_nd(x, [0])  # [1,2,3,4,3,2,1]
@@ -140,13 +140,13 @@ tf.gather_nd(x, [0, 0])  # 1
 # Two empty indices return two copies of the entire tensor
 i = tf.cast([[], []], tf.int32)
 tf.gather_nd(x, i)  # [[[ 1,2,3,4,3,2,1],
-#   [ 2,3,4,3,2,1,0]],
-#  [[ 1,2,3,4,3,2,1],
-#   [ 2,3,4,3,2,1,0]]]
+                    #   [ 2,3,4,3,2,1,0]],
+                    #  [[ 1,2,3,4,3,2,1],
+                    #   [ 2,3,4,3,2,1,0]]]
 
 # Gathering [0] twice returns the first row twice.
-tf.gather_nd(x, [[0], [0]])  # [ [1,2,3,4,3,2,1],
-#   [1,2,3,4,3,2,1] ]
+tf.gather_nd(x, [[0], [0]])     # [ [1,2,3,4,3,2,1],
+                                #   [1,2,3,4,3,2,1] ]
 
 # Gathering [0,0] twice returns row 0, col 0 twice:
 tf.gather_nd(x, [[0, 0], [0, 0]])  # [1,1]
@@ -160,4 +160,4 @@ index = [[[0, 1], [0, 0]],
          [[1, 2], [1, 0]]]
 
 tf.gather_nd(params_nd, index)  # [[2 1]
-#    [6 4]], shape=(2, 2), dtype=int32
+                                #    [6 4]], shape=(2, 2), dtype=int32
