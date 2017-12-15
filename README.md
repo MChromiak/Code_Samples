@@ -84,7 +84,7 @@ exactly what python `setup.py develop` does: installs the package (typically
 just a source folder) in a way that allows you to conveniently edit your 
 code after its installed to the (virtual) environment and have the changes 
 take effect immediately. <br />
-Note that it is highly recommended to use:
+Note that it is highly recommended to rather use:
  * `pip install .` (install) and 
  * `pip install -e <path>` (developer install) to install packages from path 
  (or from [remote repo](https://packaging.python.org/tutorials/installing-packages/#installing-from-vcs)),
