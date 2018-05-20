@@ -34,10 +34,10 @@ ipykernel` (`pip` should be equivalent `pip3`)
     * update local packages that are outdated:
 `pip list --outdated --local --format=freeze | cut -d '=' -f 1 | xargs -0 -I {} -n1 pip install -U {}`
 
-Then install `ipykernel` inside VE so that Jupyter can use it:     
+Then **install** `ipykernel` inside VE so that Jupyter can use it:     
 `(myVEdir)$ python -m  ipykernel install --user --name=myVEdir`
 
-To remove kernel just list all the paths of all your kernels:
+To **remove kernel** just list all the paths of all your kernels:
 `jupyter kernelspec list`
 
 and then remove the sellected with `sudo jupyter kernelspec uninstall <yourKernel>`
