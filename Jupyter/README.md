@@ -36,6 +36,9 @@ ipykernel` (`pip` should be equivalent `pip3`)
 
 Then install `ipykernel` inside VE so that Jupyter can use it:     
 `(myVEdir)$ python -m  ipykernel install --user --name=myVEdir`
+To remove kernel just list all the paths of all your kernels:
+`jupyter kernelspec list`
+and then remove the sellected with `sudo jupyter kernelspec uninstall <yourKernel>`
 
     
 4. Regardless if running as VE or system-side: to run Jupyter server just 
