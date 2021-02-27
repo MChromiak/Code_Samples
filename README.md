@@ -16,7 +16,7 @@ approached and configurations that have proven to be working.
 Below are instructions to prepare environment:
 
 #### PyEnv
-To install and switch arbitrary python version as well as conda one can use: https://github.com/pyenv/pyenv#understanding-path
+To install and switch arbitrary python version as well as conda one can use: https://github.com/pyenv/pyenv
 Installing with dedicated script: https://github.com/pyenv/pyenv-installer
 
 #### Python3
