@@ -15,6 +15,10 @@ approached and configurations that have proven to be working.
 
 Below are instructions to prepare environment:
 
+#### PyEnv
+To install and switch arbitrary python version as well as conda one can use: https://github.com/pyenv/pyenv#understanding-path
+Installing with dedicated script: https://github.com/pyenv/pyenv-installer
+
 #### Python3
 0. Find installed python versions: `whereis python`
 1. Install Python3 on your linux distro. Ubuntu 16.04 LTS+ ship with both 
